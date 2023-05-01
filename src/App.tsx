@@ -44,68 +44,66 @@ const App: FC = (): ReactElement => {
   return (
     <Fragment>
       <Modal onClose={modalHandler} open={open} />
-      <div className='App'>
-        <Typography
-          sx={{
-            color: 'white',
-            fontSize: '2.2em',
-            fontWeight: 'bold',
-            padding: '20px 0px 0px 20px',
-            display: 'inline-block',
-            marginRight: '10px',
-          }}
-        >
-          Todon't App
-        </Typography>
-        <Typography
-          sx={{
-            display: 'inline-block',
-            color: 'white',
-          }}
-        >
-          (...don't you dare do it!)
-        </Typography>
+      <Typography
+        sx={{
+          color: 'white',
+          fontSize: '2.2em',
+          fontWeight: 'bold',
+          padding: '20px 0px 0px 20px',
+          display: 'inline-block',
+          marginRight: '10px',
+        }}
+      >
+        Todon't App
+      </Typography>
+      <Typography
+        sx={{
+          display: 'inline-block',
+          color: 'white',
+        }}
+      >
+        (...don't you dare do it!)
+      </Typography>
+      <Box
+        sx={{
+          borderRadius: '8px',
+          bgcolor: 'white',
+          padding: '50px',
+          maxHeight: '80vh',
+          margin: '100px',
+        }}
+      >
         <Box
           sx={{
-            borderRadius: '8px',
-            bgcolor: 'white',
-            padding: '50px',
-            maxHeight: '80vh',
-            margin: '100px',
+            display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
-          <Box
+          <Typography
             sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
+              color: '#686565',
+              fontSize: '36px',
+              fontWeight: 'bold',
+              textAlign: 'left',
+              marginBottom: '20px',
+              display: 'inline-block',
             }}
           >
-            <Typography
-              sx={{
-                color: '#686565',
-                fontSize: '36px',
-                fontWeight: 'bold',
-                textAlign: 'left',
-                marginBottom: '20px',
-                display: 'inline-block',
-              }}
-            >
-              My Todon'ts
-            </Typography>
-            <Avatar>
-              <IconButton onClick={modalHandler}>
-                <QuestionMarkIcon sx={{ color: 'white' }} />
-              </IconButton>
-            </Avatar>
-          </Box>
-          <TodontForm onSubmitTodont={todontSubmitHandler} />
-          <TodontsTabContainer
-            todonts={todonts}
-            onMoveTodont={moveTodontHandler}
-            onCompleteTodont={completeTodontHandler}
-          />
+            My Todon'ts
+          </Typography>
+          <Avatar>
+            <IconButton onClick={modalHandler}>
+              <QuestionMarkIcon sx={{ color: 'white' }} />
+            </IconButton>
+          </Avatar>
         </Box>
-      </div>
+        <TodontForm onSubmitTodont={todontSubmitHandler} />
+        <TodontsTabContainer
+          todonts={todonts}
+          onMoveTodont={moveTodontHandler}
+          onCompleteTodont={completeTodontHandler}
+        />
+      </Box>
     </Fragment>
   );
 };
