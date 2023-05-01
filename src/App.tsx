@@ -1,12 +1,15 @@
 import React, { Fragment, useState, FC, ReactElement } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Avatar, IconButton } from '@mui/material';
 import TodontForm from './components/TodontForm';
 import TodontsTabContainer from './components/TodontsTabContainer';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import './App.css';
 import { Condition } from './types/enums';
+import Modal from './components/ui/Modal';
 
 const App: FC = (): ReactElement => {
   const [todonts, setTodonts] = useState<Todont[]>([]);
+  const [open, setIsOpen] = useState<boolean>(true);
 
   const todontSubmitHandler = (todont: Todont) => {
     setTodonts([...todonts, todont]);
@@ -36,8 +39,11 @@ const App: FC = (): ReactElement => {
     setTodonts(newTodonts);
   };
 
+  const modalHandler = () => setIsOpen(!open);
+
   return (
     <Fragment>
+      <Modal onClose={modalHandler} open={open} />
       <div className='App'>
         <Typography
           sx={{
@@ -68,17 +74,30 @@ const App: FC = (): ReactElement => {
             margin: '100px',
           }}
         >
-          <Typography
+          <Box
             sx={{
-              color: '#686565',
-              fontSize: '36px',
-              fontWeight: 'bold',
-              textAlign: 'left',
-              marginBottom: '20px',
+              display: 'flex',
+              justifyContent: 'space-between',
             }}
           >
-            My Todon'ts
-          </Typography>
+            <Typography
+              sx={{
+                color: '#686565',
+                fontSize: '36px',
+                fontWeight: 'bold',
+                textAlign: 'left',
+                marginBottom: '20px',
+                display: 'inline-block',
+              }}
+            >
+              My Todon'ts
+            </Typography>
+            <Avatar>
+              <IconButton onClick={modalHandler}>
+                <QuestionMarkIcon sx={{ color: 'white' }} />
+              </IconButton>
+            </Avatar>
+          </Box>
           <TodontForm onSubmitTodont={todontSubmitHandler} />
           <TodontsTabContainer
             todonts={todonts}
