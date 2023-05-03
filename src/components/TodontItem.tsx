@@ -6,7 +6,6 @@ import {
   ListItemButton,
   ListItemAvatar,
   Avatar,
-  Box,
 } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -45,10 +44,7 @@ const TodontItem: FC<Props> = ({
         boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
       }}
       secondaryAction={
-        <ListItemButton
-          onClick={moveTodont}
-          sx={{ zIndex: '3', padding: '0px' }}
-        >
+        <ListItemButton onClick={moveTodont} sx={{ padding: '0px' }}>
           <IconButton edge='start' aria-label='delete'>
             {condition === 'ACTIVE' ? <DeleteIcon /> : <RestoreFromTrashIcon />}
           </IconButton>
