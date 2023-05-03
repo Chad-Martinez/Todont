@@ -79,8 +79,8 @@ const App: FC = (): ReactElement => {
         sx={{
           borderRadius: '8px',
           bgcolor: 'white',
-          padding: '30px',
-          maxHeight: '80vh',
+          padding: '30px 30px 0px 30px',
+          minHeight: '375px',
           margin: '10%',
         }}
       >
