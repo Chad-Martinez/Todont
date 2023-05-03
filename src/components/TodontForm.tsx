@@ -29,7 +29,7 @@ const TodontForm: FC<Props> = ({ onSubmitTodont }) => {
 
   return (
     <Grid container spacing={2} component='form'>
-      <Grid item xs={10}>
+      <Grid item xs={12} md={10}>
         <TextField
           required
           label="Add Todon't"
@@ -43,7 +43,8 @@ const TodontForm: FC<Props> = ({ onSubmitTodont }) => {
       </Grid>
       <Grid
         item
-        xs={2}
+        xs={12}
+        md={2}
         sx={{
           display: 'flex',
           justifyContent: 'end',
