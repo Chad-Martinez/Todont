@@ -44,33 +44,44 @@ const App: FC = (): ReactElement => {
   return (
     <Fragment>
       <Modal onClose={modalHandler} open={open} />
-      <Typography
+      <Box
         sx={{
-          color: 'white',
-          fontSize: '2.2em',
-          fontWeight: 'bold',
+          display: 'flex',
+          justifyContent: 'start',
+          alignItems: 'flex-end',
+          flexWrap: 'wrap',
           padding: '20px 0px 0px 20px',
-          display: 'inline-block',
-          marginRight: '10px',
         }}
       >
-        Todon't App
-      </Typography>
-      <Typography
-        sx={{
-          display: 'inline-block',
-          color: 'white',
-        }}
-      >
-        (...don't you dare do it!)
-      </Typography>
+        <Typography
+          sx={{
+            color: 'white',
+            fontSize: '2.2em',
+            fontWeight: 'bold',
+            display: 'inline-block',
+            marginRight: '10px',
+          }}
+        >
+          Todon't App
+        </Typography>
+        <Typography
+          sx={{
+            display: 'inline-block',
+            color: 'white',
+            paddingBottom: '3px',
+            marginRight: '10px',
+          }}
+        >
+          (...don't you dare do it!)
+        </Typography>
+      </Box>
       <Box
         sx={{
           borderRadius: '8px',
           bgcolor: 'white',
-          padding: '50px',
+          padding: '30px',
           maxHeight: '80vh',
-          margin: '100px',
+          margin: '10%',
         }}
       >
         <Box
