@@ -4,6 +4,7 @@ import {
   Container,
   Box,
   Slide,
+  DialogActions,
   Button,
   Dialog,
   DialogTitle,
@@ -22,39 +23,19 @@ const ModalPopUp: FC<Props> = ({ open, onClose }) => {
 
   return (
     <Dialog maxWidth='md' fullWidth onClose={handleClose} open={open}>
-      <Box
+      <DialogTitle
+        fontSize={26}
         sx={{
-          display: 'flex',
-          marginTop: 3,
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          height: '45px',
+          color: '#686565',
+          padding: '15px 24px',
         }}
       >
-        <DialogTitle
-          fontSize={26}
-          sx={{
-            color: '#686565',
-          }}
-        >
-          Why to not do it?
-        </DialogTitle>
-        <Button
-          type='button'
-          variant='contained'
-          color={'error'}
-          sx={{
-            marginRight: 3,
-            width: '20px',
-          }}
-          onClick={handleClose}
-        >
-          X
-        </Button>
-      </Box>
-
+        Why to not do it?
+      </DialogTitle>
       <Container disableGutters={true}>
-        <DialogContent sx={{ fontSize: '16px', color: '#686565' }}>
+        <DialogContent
+          sx={{ fontSize: '16px', color: '#686565', padding: '0px 24px' }}
+        >
           <p>
             Often our minds are running on auto-pilot. Sometimes we don't become
             aware of doing something until after we have done it. Sometimes the
@@ -69,6 +50,20 @@ const ModalPopUp: FC<Props> = ({ open, onClose }) => {
           </p>
           <p>So go on, give it a try...or don't.</p>
         </DialogContent>
+        <DialogActions>
+          <Button
+            type='button'
+            color={'primary'}
+            size='medium'
+            sx={{
+              margin: 1,
+              fontSize: '16px',
+            }}
+            onClick={handleClose}
+          >
+            CLOSE
+          </Button>
+        </DialogActions>
       </Container>
     </Dialog>
   );
