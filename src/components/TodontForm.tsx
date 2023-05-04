@@ -16,9 +16,8 @@ const TodontForm: FC<Props> = ({ onSubmitTodont }) => {
 
   const todontSubmitHandler = (e: FormEvent) => {
     e.preventDefault();
-    const id = Math.round(Math.random() * 90) / 90;
     const todont: Todont = {
-      id,
+      id: Date.now(),
       name,
       completed: false,
       condition: Condition.Active,
